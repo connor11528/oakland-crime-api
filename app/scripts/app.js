@@ -10,5 +10,6 @@
  */
 angular
   .module('oakCrimeApp', [
-    'ngAnimate'
+    'ngAnimate',
+    'ngMorris'
   ]);
