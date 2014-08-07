@@ -1,0 +1,15 @@
+{{ getCrimeData() }}
+
+
+<div line-chart val='crimes'></div>
+
+Total crimes:
+<pre>{{ crimes | json }}</pre>
+
+
+<!-- 
+
+http://odetocode.com/blogs/scott/archive/2014/05/29/building-multiple-filters-with-lo-dash-and-angularjs.aspx
+<select ng-model='selectedCrime' ng-options='crime for crime in crimes'></select>
+
+-->

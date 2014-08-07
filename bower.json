@@ -1,17 +1,32 @@
 {
-  "name": "oak-crime",
+  "name": "oakCrime",
   "version": "0.0.0",
+  "homepage": "https://github.com/jasonshark/oakCrime",
+  "authors": [
+    "Connor James Leech <connorleech@gmail.com>"
+  ],
+  "description": "oakland crime data visualizations",
+  "keywords": [
+    "oakland",
+    "crime",
+    "data",
+    "d3",
+    "visualization"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
   "dependencies": {
-    "angular": "1.2.16",
-    "json3": "~3.3.1",
-    "es5-shim": "~3.1.0",
-    "bootstrap-sass-official": "~3.2.0",
-    "angular-animate": "1.2.16",
-    "lodash": "~2.4.1"
-  },
-  "devDependencies": {
-    "angular-mocks": "1.2.16",
-    "angular-scenario": "1.2.16"
-  },
-  "appPath": "app"
+    "angular": "~1.2.21",
+    "d3": "~3.4.11",
+    "lodash": "~2.4.1",
+    "bootstrap": "~3.2.0",
+    "moment": "~2.8.1"
+  }
 }
