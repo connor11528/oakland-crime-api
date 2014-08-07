@@ -2,9 +2,8 @@
 
 app.directive('lineChart', function(){
 	var margin = { top: 20, right: 25, bottom: 20, left: 25 },
-		width = 900,
 		height = 500,
-		radius = 4;
+		radius = 8;
 
 	return {
 		restrict: 'A',
@@ -13,6 +12,9 @@ app.directive('lineChart', function(){
 			currentDay: '='
 		},
 		link: function(scope, elem, attrs){
+			// use width from bootstrap class
+			var width = $(elem[0]).width()
+
 			// set up SVG
 			var svg = d3.select(elem[0])
 				.append('svg')
