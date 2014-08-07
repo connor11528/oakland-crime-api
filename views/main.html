@@ -1,11 +1,13 @@
-{{ getCrimeData() }}
+<h2>OPD Crime Data</h2>
 
+Day: <pre>{{ currentDay | json }}</pre>
 
-<div line-chart val='crimes'></div>
+<div line-chart val='crimes' current-day='currentDay'></div>
 
+<!-- 
 Total crimes:
 <pre>{{ crimes | json }}</pre>
-
+ -->
 
 <!-- 
 

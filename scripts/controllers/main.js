@@ -36,6 +36,7 @@ var groupCrimesByDate = function(sortedCrimes){
 
 angular.module('oakCrimeApp')
   .controller('MainCtrl', function ($scope, $http) {
+    $scope.currentDay = { parentDay: true }
 
   	// get and format crime data
     var init = function(){

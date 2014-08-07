@@ -1,0 +1,10 @@
+body {
+	margin: 0;
+}
+
+.axis path,
+.axis line {
+	fill: none;
+	stroke: black;
+	shape-rendering: crispEdges;
+}
