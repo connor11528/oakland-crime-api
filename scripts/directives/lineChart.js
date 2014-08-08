@@ -1,14 +1,19 @@
 'use strict';
 
 app.directive('lineChart', function(){
-	var margin = { top: 20, right: 25, bottom: 20, left: 25 },
+	var margin = { top: 30, right: 25, bottom: 20, left: 30 },
 		height = 500,
-		radius = 8;
+		radius = 4;
 
 	// date helper
 	var makeDate = function(toConvert){
 		var dateString = moment(toConvert + ', 2014').format()
 		return new Date(dateString)
+	}
+
+	// generate unique id from date
+	var uniqueId = function(d){
+		return 'text' + d.date.split(' ').join('');
 	}
 
 	return {
@@ -53,16 +58,17 @@ app.directive('lineChart', function(){
 					})])
 					.range([margin.top, height - margin.bottom])
 
-				// create axis
-				var xAxis = d3.svg.axis().scale(xScale).orient('top')
-				var yAxis = d3.svg.axis().scale(yScale).orient('left')
+				// create axis functions
+				var xAxis = d3.svg.axis().scale(xScale).orient('top').tickPadding(8)
+				var yAxis = d3.svg.axis().scale(yScale).orient('left').tickPadding(8)
 
-				// add axis to SVG
+				// create x axis elements inside group
 				svg.append('g').attr({
 					'class': 'axis',
 					transform: 'translate(' + [0, margin.top] + ')'
 				}).call(xAxis)
 
+				// create y axis elements inside group
 				svg.append('g').attr({
 					'class': 'axis',
 					transform: 'translate(' + [margin.left, 0] + ')'
@@ -85,11 +91,59 @@ app.directive('lineChart', function(){
 							}
 						})
 						.on('click', function(d){
-
-							// you like that shit?
+						
+							// update scope in controller
+							// =========================
 							scope.$apply(function(){
 								scope.$parent.currentDay = d
-							})							
+							})	
+
+						})
+						.on('mouseover', function(d, i){
+							// enlarge radius
+							d3.select(this)
+								.transition().duration(100)
+								.attr({
+									r: radius * 2
+								})
+
+							// add text box
+							svg.append('text')
+								.attr({
+									// id for each text box
+									id: uniqueId(d),
+									x: function(){ 
+										var xlocation = makeDate(d.date);
+
+										// add one day to x location
+										var toolTipX = new Date(d.date);
+										toolTipX.setFullYear(2014)
+										toolTipX.setDate(toolTipX.getDate() + 1);
+										// plot new date as point on scale
+										return xScale(toolTipX)
+									},
+									y: function(){ return yScale(d.numCrimes) + 5 }
+								})
+								.text(function(){
+									// set text
+									var toShow = [d.date, d.numCrimes]
+									return 'Date: ' + toShow[0] +
+										' Crimes commited: ' + toShow[1]
+								})
+						})
+						.on('mouseout', function(d, i){
+							// scale back radius
+							d3.select(this)
+								.transition().duration(100)
+								.attr({
+									r: radius
+								})
+
+							// remove text box by its unique id
+							d3.select('#' + uniqueId(d))
+								.transition()
+								.duration(100)
+								.remove()
 						})
 			})
 		}
