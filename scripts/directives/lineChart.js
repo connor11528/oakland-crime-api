@@ -5,6 +5,12 @@ app.directive('lineChart', function(){
 		height = 500,
 		radius = 8;
 
+	// date helper
+	var makeDate = function(toConvert){
+		var dateString = moment(toConvert + ', 2014').format()
+		return new Date(dateString)
+	}
+
 	return {
 		restrict: 'A',
 		scope: {
@@ -30,10 +36,10 @@ app.directive('lineChart', function(){
 
 				// create scale functions
 				var minDate = d3.min(dates, function(d){
-					return new Date(d.date)
+					return makeDate(d.date)
 				})
 				var maxDate = d3.max(dates, function(d){
-					return new Date(d.date)
+					return makeDate(d.date)
 				})
 
 				var xScale = d3.time.scale()
@@ -71,7 +77,8 @@ app.directive('lineChart', function(){
 							fill: 'rgba(197, 44, 44, 0.9)',
 							r: radius,
 							cx: function(d, i){
-								return xScale(new Date(d.date))
+
+								return xScale(makeDate(d.date))
 							},
 							cy: function(d){
 								return yScale(d.numCrimes)
