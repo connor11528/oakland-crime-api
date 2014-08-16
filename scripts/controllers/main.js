@@ -37,7 +37,6 @@ var groupCrimesByDate = function(sortedCrimes){
 angular.module('oakCrimeApp')
   .controller('MainCtrl', function ($scope, $http) {
 
-
   	// get and format crime data
     var init = function(){
         $http.get("http://data.oaklandnet.com/resource/ym6k-rx7a.json")

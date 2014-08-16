@@ -1,29 +1,19 @@
 oakCrime
 ======
 
-TODO: get rid of lotsa stuff, making it easier to deploy to gh-pages (switch to gulp)
+A repository for making visualizations of Oakland's crime and police data.
+
+Available to everyone. Target audience is journalists and citizens interested in government and our local crime fighting apparatus
 
 
+## Getting Started
 
-
-Thanks Spiker for the blog post: http://stevespiker.com/post/83491894733/oakland-gets-its-crime-data-feed-on
-
-data on crime in other cities: https://github.com/openoakland/crime-metadata-survey
+```
+$ npm install && bower install
+$ gulp
+```
+Open a web browser to `localhost:8080`
 
 ### Resources
 
-[MorrisJS](http://morrisjs.github.io/morris.js/)
-
-[ngMorris](https://github.com/jasonshark/ng-morris)
-
-[NVD3 line chart](http://nvd3.org/examples/line.html)
-
-[Raw D3 line chart](http://bl.ocks.org/mbostock/3883245)
-
-### Deploying
-
-`$ grunt build`
-
-drop the contents of `dist/` into the root `gh-pages` branch. Commit changes to `gh-pages`
-
-view: http://jasonshark.github.io/oakCrime
+[D3 line chart by Mike Bostock](http://bl.ocks.org/mbostock/3883245)
