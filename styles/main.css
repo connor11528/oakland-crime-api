@@ -41,7 +41,7 @@ alpha value of 0.75 or 75%. The purple area, then, has a final transparency of 0
 
 /* Have to set height explicity on ui-view 
 to prevent collapsing during animation*/
-.well[ui-view]{
+.viewContain[ui-view]{
  height: 65px; 
 }
 

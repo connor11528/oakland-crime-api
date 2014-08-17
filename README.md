@@ -16,4 +16,16 @@ Open a web browser to `localhost:8080`
 
 ### Resources
 
-[D3 line chart by Mike Bostock](http://bl.ocks.org/mbostock/3883245)
+
+#### angular-leaflet
+[map that can change tiles](http://tombatossals.github.io/angular-leaflet-directive/examples/tiles-example.html)
+
+
+#### d3-leaflet
+[Cool clicky-zoomy thingy](http://www.tnoda.com/blog/2013-12-07)
+
+[D3 Mapping Basics](http://www.digital-geography.com/d3-mapping-basics-draft-for-digital-geography-com/#.U-_2zNSx15Q)
+
+[D3 and Leaflet](http://bost.ocks.org/mike/leaflet/)
+
+

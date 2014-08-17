@@ -2,9 +2,11 @@
 
 var app = angular.module('oakCrimeApp', [
 	'ui.router',
-	'ngAnimate'
-])
+	'ngAnimate',
+  'leaflet-directive'
+]);
 
+// routing
 app.config(function($stateProvider, $urlRouterProvider){    
   $stateProvider
       .state("crimes", {
@@ -14,8 +16,9 @@ app.config(function($stateProvider, $urlRouterProvider){
       })
       .state("policeBeats", {
           url: "/policeBeats",
+          controller: 'PoliceBeatsCtrl',
           templateUrl: 'views/policeBeats.html'
       })
   
   $urlRouterProvider.otherwise("/");
-})
+});
