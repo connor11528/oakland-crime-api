@@ -29,6 +29,8 @@
     "bootstrap": "~3.2.0",
     "moment": "~2.8.1",
     "angular-ui-router": "~0.2.10",
-    "angular-animate": "~1.2.22"
+    "angular-animate": "~1.2.22",
+    "leaflet": "~0.7.3",
+    "angular-leaflet-directive": "~0.7.7"
   }
 }
