@@ -16,6 +16,14 @@ app.config(function($stateProvider, $urlRouterProvider){
           url: "/policeBeats",
           templateUrl: 'views/policeBeats.html'
       })
+      .state('awards', {
+        url: '/awards',
+        templateUrl: 'views/awards.html'
+      })
+      .state('salaries', {
+        url: '/salaries',
+        templateUrl: 'views/salaries.html'
+      })
   
   $urlRouterProvider.otherwise("/");
 })
