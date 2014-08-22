@@ -3,6 +3,7 @@
 var app = angular.module('oakCrimeApp', [
 	'ui.router',
 	'ngAnimate',
+  'dangle',
   'leaflet-directive'
 ]);
 
@@ -21,7 +22,8 @@ app.config(function($stateProvider, $urlRouterProvider){
       })
       .state('awards', {
         url: '/awards',
-        templateUrl: 'views/awards.html'
+        templateUrl: 'views/awards.html',
+        controller: 'AwardsCtrl'
       })
       .state('salaries', {
         url: '/salaries',

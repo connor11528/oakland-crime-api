@@ -1,17 +1,6 @@
 'use strict';
 
 app.controller('PoliceBeatsCtrl', function($scope, $http){
-	// var tileLayers = {
-	// 	gangInjunctions: {
-	// 		url: 'http://{s}.tile.something.tileStuff'
-	// 	},
-	// 	policeBeats: {
-	// 		url: 'http://{s}.tile.something.tileStuff'
-	// 	},
-	// 	communityBeats: {
-	// 		url: 'http://{s}.tile.something.tileStuff'
-	// 	}
-	// }
 
 	angular.extend($scope, {
 	      oakland: {
@@ -40,5 +29,4 @@ app.controller('PoliceBeatsCtrl', function($scope, $http){
 			}
 		})
 	})
-
 })
