@@ -8,9 +8,30 @@ app.controller('AwardsCtrl', function($scope, DataParser){
 			return award
 		});
 
-		$scope.awardsByName = _.groupBy(awards, 'Name_of_Award');
-		$scope.awardsBySender = _.groupBy(awards, 'Award_Sender');
-		$scope.awardsByRank = _.groupBy(awards, 'Rank')
+		var awardsByType = _.groupBy(awards, 'Name_of_Award');
+		var awardsBySender = _.groupBy(awards, 'Award_Sender');
+		var awardsByRank = _.groupBy(awards, 'Rank')
+	
+		var awardTypes = _.keys(awardsByType)
+		console.log(awardsByType)
+
+		console.log(_.flatten(_.values(awardsByType)))
+
+		// data for the donut directive
+		$scope.awardTypePie = {
+			_type : "terms",
+			missing : 0,
+			total : _.flatten(_.values(awardsByType)).length,
+			other : 0,
+			terms : []
+		};
+		
+		$scope.awardTypePie.terms = _.map(awardTypes, function(awardType){
+			return {
+				term: awardType,
+				count: awardsByType[awardType].length
+			}
+		})
 	});
 
 // Award_Sender: "Internal"

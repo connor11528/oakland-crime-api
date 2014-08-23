@@ -836,7 +836,6 @@ angular.module('dangle')
                 // Wrap the main drawing logic in an Angular watch function.
                 // This will get called whenever our data attribute changes.
                 scope.$watch('bind', function(data) {
-
                     var duration = scope.duration || 0;
 
                     // arc tweening
