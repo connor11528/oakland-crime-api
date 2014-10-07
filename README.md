@@ -29,3 +29,7 @@ Open a web browser to `localhost:8080`
 [D3 and Leaflet](http://bost.ocks.org/mike/leaflet/)
 
 
+### Stuff
+
+`data/OPD_140722_1.csv` is in .gitignore cause it exceeds github's 100mb file limit. You can download the file [here](http://data.openoakland.org/dataset/crime-reports/resource/d146d06d-57c3-4680-a320-5d7dec31bfd8)
+
