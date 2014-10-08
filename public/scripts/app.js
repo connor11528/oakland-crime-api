@@ -1,10 +1,7 @@
 'use strict';
 
 var app = angular.module('oakCrimeApp', [
-	'ui.router',
-	'ngAnimate',
-  'dangle',
-  'leaflet-directive'
+	'ui.router'
 ]);
 
 // routing
@@ -27,7 +24,8 @@ app.config(function($stateProvider, $urlRouterProvider){
       })
       .state('salaries', {
         url: '/salaries',
-        templateUrl: 'views/salaries.html'
+        templateUrl: 'views/salaries.html',
+        controller: 'SalariesCtrl'
       })
   
   $urlRouterProvider.otherwise("/");

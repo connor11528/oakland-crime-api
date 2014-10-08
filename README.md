@@ -5,8 +5,11 @@ A repository for making visualizations of Oakland's crime and police data.
 
 Available to everyone. Target audience is journalists and citizens interested in government and our local crime fighting apparatus
 
+### Todo
 
-## Getting Started
+add backend (PapaParse messes up with python SimpleHTTPServer)
+
+### Getting Started
 
 ```
 $ npm install && bower install

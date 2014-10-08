@@ -1,8 +1,8 @@
 {
   "name": "oakCrime",
   "version": "0.0.0",
-  "description": "oakCrime ======",
-  "main": "gulpfile.js",
+  "description": "crime data in oakland",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,14 +16,11 @@
     "url": "https://github.com/jasonshark/oakCrime/issues"
   },
   "homepage": "https://github.com/jasonshark/oakCrime",
-  "devDependencies": {
-    "gulp": "^3.8.7",
-    "gulp-connect": "^2.0.6",
-    "gulp-inject": "^1.0.1",
-    "main-bower-files": "^1.0.2"
-  },
   "dependencies": {
+    "body-parser": "^1.9.0",
+    "express": "^4.9.5",
     "lodash": "^2.4.1",
+    "method-override": "^2.2.0",
     "scraperjs": "^0.3.1"
   }
 }
