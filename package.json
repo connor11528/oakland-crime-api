@@ -18,9 +18,11 @@
   "homepage": "https://github.com/jasonshark/oakCrime",
   "dependencies": {
     "body-parser": "^1.9.0",
+    "csv-parser": "^1.4.6",
     "express": "^4.9.5",
     "lodash": "^2.4.1",
     "method-override": "^2.2.0",
+    "mongoose": "^3.8.17",
     "scraperjs": "^0.3.1"
   }
 }
