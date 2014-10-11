@@ -8,6 +8,8 @@ var fs = require('fs'),
 // connect to database
 require('../server/database')();
 
+var startTime = new Date().getTime()/1000;
+
 var readableCrimes = fs.createReadStream(filePath);
 
 readableCrimes
@@ -36,5 +38,8 @@ readableCrimes
 		});
 	})
 	.on('end', function(){
+		var totalTime = new Date().getTime()/1000 - startTime;
+		
 		console.log('All crimes in ' + filepath + ' added to database!');
+		console.log('Task took ' + totalTime + ' seconds.')
 	});
