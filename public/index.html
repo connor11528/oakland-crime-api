@@ -2,7 +2,7 @@
 <html class="no-js">
   <head>
     <meta charset="utf-8">
-    <title>oakCrime</title>
+    <title>Oakland Crime</title>
     
     <!-- Necessary for Github Pages 
     <base href='/oakCrime/' />
@@ -10,11 +10,7 @@
     <meta name="description" content="oakland crime data open data visualization d3">
     <meta name="viewport" content="width=device-width">
 
-    <!-- bower:css -->
-    <link rel="stylesheet" href="/bower_components/leaflet/dist/leaflet.css">
-    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
-    <!-- endinject -->
-    <link rel='stylesheet' href='styles/slate.bootswatch.css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles/main.css">
     
   </head>
@@ -22,49 +18,28 @@
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    
-    
 
-    <div class="container">
-      <div ng-include="'views/partials/nav.html'"></div>
-
-      <!-- Fork me on Github -->
-      <a href="https://github.com/jasonshark/oakCrime"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
-
-      <div class="row">
-           <div class="span12 ui-view-container">
-              <div class='viewContain' ui-view></div>        
-           </div>
-        </div> 
-    </div>
+  <div class="container">
+    <div ng-include="'views/partials/nav.html'"></div>
+    <div class="row">
+      <div ui-view></div>        
+    </div> 
+  </div>
 
     <!--[if lt IE 9]>
     <script src="bower_components/es5-shim/es5-shim.js"></script>
     <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
 
-    <!-- bower:js -->
     <script src="/bower_components/angular/angular.js"></script>
     <script src="/bower_components/d3/d3.js"></script>
     <script src="/bower_components/lodash/dist/lodash.compat.js"></script>
     <script src="/bower_components/jquery/dist/jquery.js"></script>
-    <script src="/bower_components/moment/moment.js"></script>
     <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="/bower_components/leaflet/dist/leaflet.js"></script>
-    <script src="/bower_components/leaflet/dist/leaflet-src.js"></script>
-    <script src="/bower_components/papaparse.js/papaparse.js"></script>
-    <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <!-- endinject -->
+    <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="/bower_components/angular-bootstrap/ui-bootstrap.js"></script>
     
-    <script src='scripts/togeojson.js'></script>
     <script src="scripts/app.js"></script>
-
-    <script src='scripts/services/dataParser.js'></script>
-    <script src='scripts/controllers/policeBeats.js'></script>
-    <script src='scripts/controllers/salaries.js'></script>
     <script src="scripts/controllers/main.js"></script>
-    <script src='scripts/controllers/awards.js'></script>
-    <script src='scripts/directives/dangle.js'></script>
-    <script src="scripts/directives/lineChart.js"></script>
 </body>
 </html>
