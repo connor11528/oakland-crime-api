@@ -27,6 +27,8 @@
     "d3": "~3.4.11",
     "lodash": "~2.4.1",
     "angular-ui-router": "~0.2.10",
-    "angular-bootstrap": "~0.11.2"
+    "angular-bootstrap": "~0.11.2",
+    "angular-loading-bar": "~0.6.0",
+    "ng-tags-input": "~2.1.1"
   }
 }

@@ -2,7 +2,9 @@
 
 var app = angular.module('oakCrimeApp', [
 	'ui.router',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'angular-loading-bar',
+  'ngTagsInput'
 ]);
 
 // routing

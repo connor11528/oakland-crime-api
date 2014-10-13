@@ -1,1 +1,45 @@
-main.html is here
+<div class='col-md-4'>
+	<accordion close-others="false">
+		<accordion-group is-open="beatOpen">
+			<accordion-heading>
+				Select Police Beat 
+				<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': beatOpen, 'glyphicon-chevron-right': !beatOpen }"></i>
+			</accordion-heading>
+			<p>Show crimes that occured in particular areas. Don't know what beat you're in? <a href=''>Find out here</a></p>
+			<div ng-repeat='beat in policeBeats'>
+				<input type='checkbox'> {{ beat }}
+			</div>
+		</accordion-group>
+
+		<accordion-group is-open="dateOpen">
+			<accordion-heading>
+				Select Date Range
+				<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': dateOpen, 'glyphicon-chevron-right': !dateOpen }"></i>
+			</accordion-heading>
+			<p>Select a date range</p>
+		</accordion-group>
+
+		<accordion-group is-open="catgOpen">
+			<accordion-heading>
+				Select Crime Category
+				<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': catgOpen, 'glyphicon-chevron-right': !catgOpen }"></i>
+			</accordion-heading>
+			<input type="text" ng-model="selectedCrimeCategory" placeholder="This is a general categorization about the crime" typeahead="catg for catg in crimeCategories | filter:$viewValue | limitTo:12" class="form-control">
+			<pre>selectedCrimeCategory: {{ selectedCrimeCategory | json }}</pre>
+		</accordion-group>
+
+		<accordion-group is-open="cTypeOpen">
+		    <accordion-heading>
+		        Select Crime Type <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': cTypeOpen, 'glyphicon-chevron-right': !cTypeOpen}"></i>
+		    </accordion-heading>
+		    <input type="text" ng-model="selectedCrimeType" placeholder="This is specific about the crime" typeahead="type for type in crimeTypes | filter:$viewValue | limitTo:12" class="form-control">
+		    <pre>selectedCrimeType: {{ selectedCrimeType | json }}</pre>
+		</accordion-group>
+	</accordion>
+</div>
+
+
+<div class='col-md-8'>
+
+</div>
+
