@@ -3,6 +3,7 @@
 app.controller('MainCtrl', function($scope, $http, Crime) {
     $scope.crimeTypes = [];
     $scope.crimeCategories = [];
+    $scope.categoryCounts = [];
     $scope.dateRange = { startDate: null, endDate: null };
 
     $http.get('/api/crimeTotals').then(function(res){
@@ -19,14 +20,13 @@ app.controller('MainCtrl', function($scope, $http, Crime) {
     	Crime.getCrimesByDate($scope.dateRange.startDate, $scope.dateRange.endDate, function(res){
     		$scope.crimes = res;
     		var crimeCategories = getCategories($scope.crimes);
-    		var categoryCounts = getCountByCategory(crimeCategories, $scope.crimes);
+    		$scope.categoryCounts = getCountByCategory(crimeCategories, $scope.crimes);
     		// should be a directive..
-    		createPolarArea(categoryCounts);
     	});
     };
 });
 
-// CanvasJS Polar Area Chart
+// all categories in an array of crime objects
 function getCategories(crimes){
 	var categories = [];
 	angular.forEach(crimes, function(crime){
@@ -37,19 +37,21 @@ function getCategories(crimes){
 	return categories;
 }
 
+// create array of objects to pass to CanvasJS PolarArea
 function getCountByCategory(categories, crimes){
 	var groupedByCategory = _.groupBy(crimes, "crimetype");
 	var counts = _.map(groupedByCategory, function(value, key){
-		// array of objects for CanvasJS
+        var color = Please.make_color()[0];
+        var rgb = Please.HEX_to_RGB(color)
+        // highlight shade sometimes spits out hexadecimal decimals (ie "#5f4f4f.8")
+        var highlight = Please.RGB_to_HEX({ r: rgb['r']*.5, g: rgb['b']*.5, b: rgb['b']*.5 });
+
 		return  {
 			label: key,
-			value: value.length
+			value: value.length,
+            color: color,
+            highlight: highlight
 	    };
 	});
 	return counts;
 };
-
-function createPolarArea(countsByCategory){
-	var ctx = document.getElementById("myChart").getContext("2d");
-	new Chart(ctx).PolarArea(countsByCategory, {});
-}

@@ -2,3 +2,9 @@
 body { padding-top: 70px; }
 
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+/* remove gutter from rows */
+.no-gutter > [class*='col-'] {
+    padding-right:0;
+    padding-left:0;
+}

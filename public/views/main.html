@@ -6,13 +6,16 @@
 <div class='col-md-8'>
 	<h4>Start: {{ formatDate(dateRange.startDate) }}</h4>
 	<h4>End: {{ formatDate(dateRange.endDate) }}</h4>
-	
+
+	<!-- PolarArea chart directive -->
 	<div id="myChart"></div>
 
 	<div class='row'>
 		<h4>Number of crimes: {{ crimes.length }}</h4>
 
-		<pre>{{ crimes | json }}</pre>
+		<polar-area category-counts='categoryCounts'></polar-area>
+
+		<pre>{{ categoryCounts | json }}</pre>
 	</div>
 </div>
 
