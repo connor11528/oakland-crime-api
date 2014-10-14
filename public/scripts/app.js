@@ -4,7 +4,8 @@ var app = angular.module('oakCrimeApp', [
 	'ui.router',
   'ui.bootstrap',
   'angular-loading-bar',
-  'ngTagsInput'
+  'ngTagsInput',
+  'daterangepicker'
 ]);
 
 // routing
@@ -14,6 +15,15 @@ app.config(function($stateProvider, $urlRouterProvider){
           url: "/",
           controller: 'MainCtrl',
           templateUrl: 'views/main.html'
+      })
+      .state("accordion", {
+          url: "/accordion",
+          controller: 'MainCtrl',
+          templateUrl: 'views/accordion.html'
+      })
+      .state('about', {
+        url: '/about',
+        templateUrl: 'views/about.html'
       })
   
   $urlRouterProvider.otherwise("/");
