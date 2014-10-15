@@ -1,5 +1,4 @@
 node_modules
 .tmp
-public/bower_components
 public/data/OPD_140722_1.csv
-DS_Store
+.DS_Store

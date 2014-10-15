@@ -1,0 +1,31 @@
+{
+  "name": "pleasejs",
+  "version": "0.3.0",
+  "description": "JS library to generate random pleasing colors/color schemes",
+  "main": "Please.js",
+  "scripts": {
+    "test": "Please.make_color();"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Fooidge/PleaseJS.git"
+  },
+  "keywords": [
+    "color",
+    "scheme",
+    "random"
+  ],
+  "author": "Jordan Checkman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Fooidge/PleaseJS/issues"
+  },
+  "homepage": "https://github.com/Fooidge/PleaseJS",
+  "devDependencies": {
+    "gulp": "^3.8.6",
+    "gulp-jshint": "~1.7.1",
+    "gulp-uglify": "~0.3.1",
+    "gulp-watch": "~0.6.8",
+    "jshint-stylish": "^0.4.0"
+  }
+}

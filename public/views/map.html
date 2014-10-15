@@ -1,10 +1,31 @@
-this is map view
-<pre>{{ map }}</pre>
 
+<div class='row'>
+	<ui-gmap-google-map center="map.center" zoom="map.zoom" options="options">
 
+        <ui-gmap-circle 
+        	center="circle.center" 
+        	stroke="circle.stroke" 
+        	fill="circle.fill" 
+        	radius="circle.radius"
+            visible="circle.visible" 
+            geodesic="circle.geodesic" 
+            editable="circle.editable" 
+            draggable="circle.draggable" 
+            clickable="circle.clickable"
+            events='circleEvents'></ui-gmap-circle>
 
-<ui-gmap-google-map center="map.center" zoom="map.zoom"></ui-gmap-google-map>
+        <ui-gmap-markers
+             models='crimesInArea'
+             idKey='crimeId'
+             doRebuildAll="true"
+             fit="false"
+             labelContent='{expression}'
+             coords="'location'"></ui-gmap-markers>
+             <!-- click="'{string or expression to a function}'" -->
+    
+	</ui-gmap-google-map>
+</div>
 
-<!-- <ui-gmap-google-map center="map.center" zoom="map.zoom">
-    <marker coords="map.marker.coords" idkey="map.marker.id" options="map.marker.options"></marker>
-</ui-gmap-google-map> -->
+<pre>{{ map | json }}</pre>
+
+<pre>{{ circle | json }}</pre>

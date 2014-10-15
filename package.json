@@ -18,6 +18,7 @@
   "homepage": "https://github.com/jasonshark/oakCrime",
   "dependencies": {
     "body-parser": "^1.9.0",
+    "cors": "^2.4.2",
     "csv-parser": "^1.4.6",
     "express": "^4.9.5",
     "lodash": "^2.4.1",

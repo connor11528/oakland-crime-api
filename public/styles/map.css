@@ -1,7 +1,3 @@
-body {
-    font-family: 'Open Sans', sans-serif;
-}
-
 .angular-google-map-container {
     width: 100%;
     height: 600px;
@@ -40,10 +36,9 @@ body {
     white-space: nowrap;
 }
 
-/* uncomment this if you are using the <google-map> element instead of a div
 .angular-google-map {
   display: block;
-  }*/
+}
 
 .custom-info-window{
     background: rgba(0,0,0,0.5);
