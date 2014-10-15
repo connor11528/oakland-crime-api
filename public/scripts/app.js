@@ -5,16 +5,31 @@ var app = angular.module('oakCrimeApp', [
   'ui.bootstrap',
   'angular-loading-bar',
   'ngTagsInput',
-  'daterangepicker'
+  'daterangepicker',
+  'google-maps'.ns()
 ]);
 
-// routing
-app.config(function($stateProvider, $urlRouterProvider){    
-  $stateProvider
+
+app.config(["$stateProvider", "$urlRouterProvider", 'GoogleMapApiProvider'.ns(), 
+  function($stateProvider, $urlRouterProvider, GoogleMapApi){  
+
+    GoogleMapApi.configure({
+        key: 'AIzaSyBew-TghtDSGedK_43qRtmxb2Y95ikwg24',
+        v: '3.17',
+        libraries: 'weather,geometry,visualization'
+    });
+  
+    // routing
+    $stateProvider
       .state("main", {
           url: "/",
           controller: 'MainCtrl',
           templateUrl: 'views/main.html'
+      })
+      .state("map", {
+          url: "/map",
+          controller: 'MapCtrl',
+          templateUrl: 'views/map.html'
       })
       .state("accordion", {
           url: "/accordion",
@@ -24,7 +39,7 @@ app.config(function($stateProvider, $urlRouterProvider){
       .state('about', {
         url: '/about',
         templateUrl: 'views/about.html'
-      })
+      });
   
   $urlRouterProvider.otherwise("/");
-});
+}]);
