@@ -5,7 +5,17 @@ A repository for making visualizations of Oakland's crime and police data.
 
 Available to everyone. Target audience is journalists and citizens interested in government and our local crime fighting apparatus
 
-### Getting Started
+### API
+
+Endpoint: `http://oakland-crime.herokuapp.com`
+
+`/api/crimeTotals`
+
+### Todo
+
+- Fix angular.js ondragstop add marker [issue](https://github.com/angular-ui/angular-google-maps/issues/765)
+
+### Contributing
 
 ```
 $ npm install && bower install
@@ -26,17 +36,15 @@ n + 1 Raise the Crime Rate ([article](https://nplusonemag.com/issue-13/politics/
 
 Chicago crime mapping ([app](http://crimearound.us/))
 
+Chicago crime [graphs and visualizations](http://heyjackass.com/)
+
+interactive analysis of crime in Chicago's 50 wards [Crime in chicago](http://www.crimeinchicago.org/)
+
 ### Dev Resources
+
+#### Angular.js
 
 [angular-slider](http://venturocket.github.io/angular-slider/)
 
 [angular-tags](http://mbenford.github.io/ngTagsInput/)
-
-[map that can change tiles](http://tombatossals.github.io/angular-leaflet-directive/examples/tiles-example.html)
-
-[d3-leaflet: clicky-zoomy thingy](http://www.tnoda.com/blog/2013-12-07)
-
-[D3 Mapping Basics](http://www.digital-geography.com/d3-mapping-basics-draft-for-digital-geography-com/#.U-_2zNSx15Q)
-
-[D3 and Leaflet](http://bost.ocks.org/mike/leaflet/)
 

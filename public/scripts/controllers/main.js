@@ -21,9 +21,16 @@ app.controller('MainCtrl', function($scope, $http, Crime) {
     		$scope.crimes = res;
     		var crimeCategories = getCategories($scope.crimes);
     		$scope.categoryCounts = getCountByCategory(crimeCategories, $scope.crimes);
-    		// should be a directive..
     	});
     };
+
+    $scope.doSearch = function(){
+        Crime.searchCrimes($scope.query, function(err, data){
+            if(!err){
+                $scope.searchResults = data;
+            }
+        })
+    }
 });
 
 // all categories in an array of crime objects
