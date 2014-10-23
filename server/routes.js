@@ -1,9 +1,11 @@
 var mongoose = require('mongoose'),
 	express = require('express'),
+	fs = require('fs'),
 	path = require('path'),
 	Crime = mongoose.model('Crime');
 
 var router = express.Router();
+var root = path.resolve(__dirname, '../public');
 
 module.exports = function(app){
 
@@ -12,8 +14,15 @@ module.exports = function(app){
 	app.use('/api', router);
 
 	router.get('/crimeTotals', function(req, res){
-		res.sendFile('./data/crimeTotals.json', { root: path.resolve(__dirname, '../public') });
-	})
+		res.sendFile('./data/crimeTotals.json', { root: root });
+	});
+
+	router.get('/crimeCategories', function(req, res){
+		var crimeTotals = fs.readFileSync(root + '/data/crimeTotals.json', "utf8");
+		crimeTotals = JSON.parse(crimeTotals);
+
+		res.jsonp(crimeTotals["categories"]);
+	});
 
 	// query string
 	router.get('/', function(req, res){
@@ -27,6 +36,22 @@ module.exports = function(app){
 
 			res.json(crimes);
 		})
+	});
+
+	router.get('/officerSalaries', function(req, res){
+		res.jsonp()
+	});
+
+	router.get('/wrongfulDeaths', function(req, res){
+		res.jsonp()
+	});
+
+	router.get('/officerAwards', function(req, res){
+		res.jsonp()
+	});
+
+	router.get('/homicideVictims', function(req, res){
+		res.jsonp()
 	});
 
 	// Angular routing
