@@ -1,9 +1,0 @@
-CITY: City Attorney case number.
-DISTRICT: Federal court case number.
-SUPERIOR: Superior court case number.
-OFFICER: Name of officer or officers, comma separated, formatted First Middle Last or First Initial Last or Last Only.
-PLAINTIFF: Name of plaintiff or plaintiffs, comma separated, formatted First Middle Last or First Last. Legal guardian noted as (legal guardian).
-DATE: Date filed in court, per City Attorney's case report or court records.
-SETTLEMENT: Settlement amount rounded to decimal point.
-SUMMARY: Summary of allegations. See readme.txt file for full explanation.
-PATTORNEY: Plaintiff attorney or attorneys per the City Attorney case report or court records.

@@ -1,21 +1,22 @@
-<div class='col-md-4'>
-	<h3>Select a date range</h3>
-	<input date-range-picker options='{showDropdowns: true}' class="form-control date-picker" type="text" ng-model="dateRange" min="'2007-01-01'" max="'2014-11-05'">
-	<div class='btn btn-success' ng-click='getCrimes()'>Search</div>
-</div>
-<div class='col-md-8'>
-	<h4>Start: {{ formatDate(dateRange.startDate) }}</h4>
-	<h4>End: {{ formatDate(dateRange.endDate) }}</h4>
+<div class='row' style='height: 120px'></div>
+<div class=' text-center col-md-offset-3 col-md-6'>
+	<h1>oakland-crime-api</h1>
 
-	<!-- PolarArea chart directive -->
-	<div id="myChart"></div>
+	<p>One way to bring more transparency to the criminal justice and policing system in Oakland, CA</p>
 
-	<div class='row'>
-		<h4>Number of crimes: {{ crimes.length }}</h4>
+	<div class='btn btn-lg btn-default'>Read the docs</div>
+	<div class='btn btn-lg btn-default'>View sample app</div>
 
-		<polar-area category-counts='categoryCounts'></polar-area>
-
-		<pre>{{ categoryCounts | json }}</pre>
+	<div class='row' style='margin-top: 20px'>
+		<div class='col-md-4'>
+			<iframe src="http://ghbtns.com/github-btn.html?user=jasonshark&repo=oakland-crime-api&type=fork&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0"></iframe>
+		</div>
+		<div class='col-md-4'>
+			<iframe src="http://ghbtns.com/github-btn.html?user=jasonshark&repo=oakland-crime-api&type=watch&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0"></iframe>
+		</div>
+		<div class='col-md-4'>
+			<a href="https://twitter.com/share" class="twitter-share-button" data-via="openoakland" data-size="large" data-hashtags="opendata">Tweet</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+		</div>
 	</div>
 </div>
-

@@ -1,36 +1,36 @@
 'use strict';
 
 app.controller('MainCtrl', function($scope, $http, Crime) {
-    $scope.crimeTypes = [];
-    $scope.crimeCategories = [];
-    $scope.categoryCounts = [];
-    $scope.dateRange = { startDate: null, endDate: null };
+    // $scope.crimeTypes = [];
+    // $scope.crimeCategories = [];
+    // $scope.categoryCounts = [];
+    // $scope.dateRange = { startDate: null, endDate: null };
 
-    $http.get('/api/crimeTotals').then(function(res){
-        $scope.crimeTypes = res.data.crimeTypes;
-        $scope.policeBeats = res.data.beats;
-        $scope.crimeCategories = res.data.categories;
-    }, function(err){ console.error(err); });
+    // $http.get('/api/crimeTotals').then(function(res){
+    //     $scope.crimeTypes = res.data.crimeTypes;
+    //     $scope.policeBeats = res.data.beats;
+    //     $scope.crimeCategories = res.data.categories;
+    // }, function(err){ console.error(err); });
 
-    $scope.formatDate = function(date){
-    	return moment(date).format('MMMM Do YYYY, h:mm:ss a')
-    };
+    // $scope.formatDate = function(date){
+    // 	return moment(date).format('MMMM Do YYYY, h:mm:ss a')
+    // };
 
-    $scope.getCrimes = function(){
-    	Crime.getCrimesByDate($scope.dateRange.startDate, $scope.dateRange.endDate, function(res){
-    		$scope.crimes = res;
-    		var crimeCategories = getCategories($scope.crimes);
-    		$scope.categoryCounts = getCountByCategory(crimeCategories, $scope.crimes);
-    	});
-    };
+    // $scope.getCrimes = function(){
+    // 	Crime.getCrimesByDate($scope.dateRange.startDate, $scope.dateRange.endDate, function(res){
+    // 		$scope.crimes = res;
+    // 		var crimeCategories = getCategories($scope.crimes);
+    // 		$scope.categoryCounts = getCountByCategory(crimeCategories, $scope.crimes);
+    // 	});
+    // };
 
-    $scope.doSearch = function(){
-        Crime.searchCrimes($scope.query, function(err, data){
-            if(!err){
-                $scope.searchResults = data;
-            }
-        })
-    }
+    // $scope.doSearch = function(){
+    //     Crime.searchCrimes($scope.query, function(err, data){
+    //         if(!err){
+    //             $scope.searchResults = data;
+    //         }
+    //     })
+    // }
 });
 
 // all categories in an array of crime objects
