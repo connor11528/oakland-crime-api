@@ -1,0 +1,17 @@
+<h1>oakland-crime-api documentation</h1>
+
+<p>Everything is `GET` request</p>
+
+<dl>
+	<dt>API endpoint</dt>
+	<dd><pre>http://oakland-crime.herokuapp.com/api</pre></dd>
+	<br>
+	<dt>/crimeTotals</dt>
+	<dd>Sends an object with all valid `crimeTypes`, `beats` and `categories`. These correspond to the police beat where the crime occured, the type of crime and the categorization of the crime. Crime type is more specific than category</dd>
+	<dt>/crimeCategories</dt>
+	<dd>Get all the categories for crimes</dd>
+	<dt>/beat/:beat</dt>
+	<dd>Crimes a given police beat from 2007 to 2013</dd>
+	<dt>/api?start=YYYY-MM-DD&end=YYYY-MM-DD</dt>
+	<dd>Gets crimes all crimes that occured within the date range. Valid from 2007 to about August 2014</dd>
+</dl>

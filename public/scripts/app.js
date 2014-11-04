@@ -9,7 +9,6 @@ var app = angular.module('oakCrimeApp', [
   'google-maps'.ns()
 ]);
 
-
 app.config(["$stateProvider", "$urlRouterProvider", 'GoogleMapApiProvider'.ns(), 
   function($stateProvider, $urlRouterProvider, GoogleMapApi){  
 
@@ -39,6 +38,10 @@ app.config(["$stateProvider", "$urlRouterProvider", 'GoogleMapApiProvider'.ns(),
       .state('about', {
         url: '/about',
         templateUrl: 'views/about.html'
+      })
+      .state('documentation', {
+        url: '/documentation',
+        templateUrl: 'views/documentation.html'
       });
   
   $urlRouterProvider.otherwise("/");

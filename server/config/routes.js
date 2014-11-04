@@ -13,11 +13,11 @@ module.exports = function(app, envConfig){
 	app.use('/api', router);
 
 	router.get('/crimeTotals', function(req, res){
-		res.sendFile('./data/crimeTotals.json', { root: root });
+		res.sendFile(envConfig.rootPath + 'server/data/crimeTotals.json');
 	});
 
 	router.get('/crimeCategories', function(req, res){
-		var crimeTotals = fs.readFileSync(root + '/data/crimeTotals.json', "utf8");
+		var crimeTotals = fs.readFileSync(envConfig.rootPath + 'server/data/crimeTotals.json', "utf8");
 		crimeTotals = JSON.parse(crimeTotals);
 
 		res.jsonp(crimeTotals["categories"]);
@@ -44,23 +44,23 @@ module.exports = function(app, envConfig){
 	});
 
 	router.get('/officerSalaries', function(req, res){
-		res.jsonp()
+		res.jsonp({ implemented: false })
 	});
 
 	router.get('/wrongfulDeaths', function(req, res){
-		res.jsonp()
+		res.jsonp({ implemented: false })
 	});
 
 	router.get('/officerAwards', function(req, res){
-		res.jsonp()
+		res.jsonp({ implemented: false })
 	});
 
 	router.get('/homicideVictims', function(req, res){
-		res.jsonp()
+		res.jsonp({ implemented: false })
 	});
 
 	// Angular routing
 	app.get('*', function(req, res){
-		res.sendfile('./public/index.html')
+		res.sendFile(envConfig.rootPath + 'public/index.html')
 	});
 }

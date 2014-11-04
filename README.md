@@ -5,15 +5,10 @@ A repository for making visualizations of Oakland's crime and police data.
 
 Available to everyone. Target audience is journalists and citizens interested in government and our local crime fighting apparatus
 
-### API
+### Documentation
 
-Endpoint: `http://oakland-crime.herokuapp.com`
+Full [documentation here](http://oakland-crime.herokuapp.com/#/documentation)
 
-`/api/crimeTotals`
-
-### Todo
-
-- Fix angular.js ondragstop add marker [issue](https://github.com/angular-ui/angular-google-maps/issues/765)
 
 ### Contributing
 
@@ -24,9 +19,11 @@ $ node server
 ```
 Open a web browser to `localhost:8080`
 
-### Stuff
+### Resources
 
 `data/OPD_140722_1.csv` is in .gitignore cause it exceeds github's 100mb file limit. You can download the file [here](http://data.openoakland.org/dataset/crime-reports/resource/d146d06d-57c3-4680-a320-5d7dec31bfd8)
+
+City of Oakland [crime database](http://gismaps.oaklandnet.com/crimewatch/) (maintained by third-party crimemapping.com)
 
 Data Visualization Challenge: [Using Data to Improve Justice](http://nij.gov/funding/Pages/fy14-data-visualization-challenge.aspx?utm_source=twitter&utm_medium=social-media&utm_campaign=dataviz-challenge)
 
