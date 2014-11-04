@@ -5,10 +5,14 @@ A repository for making visualizations of Oakland's crime and police data.
 
 Available to everyone. Target audience is journalists and citizens interested in government and our local crime fighting apparatus
 
+### T0do
+
+- production database
+- crimes by beat sortage
+
 ### Documentation
 
 Full [documentation here](http://oakland-crime.herokuapp.com/#/documentation)
-
 
 ### Contributing
 

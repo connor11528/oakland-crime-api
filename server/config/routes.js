@@ -29,6 +29,8 @@ module.exports = function(app, envConfig){
 		res.sendFile(envConfig.rootPath + 'server/data/beats/' + beat + '.geojson');
 	});
 
+	// ERROR: Heroku Dyno limits: { 1X: 512MB,  2X: 1024MB }
+	// ohhhh... also production database
 	// query string, send crimes for date range
 	router.get('/', function(req, res){
 
@@ -38,6 +40,8 @@ module.exports = function(app, envConfig){
 		// Model.find({"date": {'$gte': new Date('3/1/2014'), '$lt': new Date('3/16/2014')}}, callback);
 		Crime.find({ date: { $lte: end, $gt: start } }, function(err, crimes){
 			if(err) return err;
+
+			console.log(crimes.length + ' crimes found')
 
 			res.json(crimes);
 		})

@@ -4,16 +4,16 @@ var cors = require('cors');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 
+app.use(cors());
+
 var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 var envConfig = require('./server/config/environments')[env];
 
 // EXPRESS CONFIG
-app.use(cors());
 app.use(bodyParser.json());
-app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 app.use(bodyParser.urlencoded({ extended: true }));
-
-app.use(methodOverride('X-HTTP-Method-Override'));
+// app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
+// app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(express.static(__dirname + '/public'));
 
 // DATABASE

@@ -12,7 +12,9 @@ module.exports = {
 	},
 	production: {
 		rootPath: rootPath,
-		database: 'mongodb://jasonshark:multivision@ds037478.mongolab.com:37478/multivision',
+		database: 'mongodb://localhost/oakCrime',
 		port: process.env.PORT || 80
 	}
-}
+};
+
+// 'mongodb://jasonshark:multivision@ds037478.mongolab.com:37478/multivision'
