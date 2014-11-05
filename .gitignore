@@ -1,4 +1,4 @@
 node_modules
 .tmp
-public/data/OPD_140722_1.csv
+server/data/OPD_140722_1.csv
 .DS_Store

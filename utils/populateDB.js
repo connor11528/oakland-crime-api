@@ -1,13 +1,15 @@
 var fs = require('fs'),
 	path = require('path'),
 	csv = require('csv-parser'),
-	filePath = path.join(__dirname, '../public/data/OPD_140722_1.csv'),
+	filePath = path.join(__dirname, '../server/data/OPD_140722_1.csv'),
 	mongoose = require('mongoose'),
 	Crime = require('../server/models/Crime');
 
 // connect to database
-require('../server/database')();
+var envConfig = require('../server/config/environments')['production'];
+var db = require('../server/config/database')(envConfig);
 
+console.log(db)
 var startTime = new Date().getTime()/1000;
 
 var readableCrimes = fs.createReadStream(filePath);
