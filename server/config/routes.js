@@ -9,7 +9,7 @@ var router = express.Router();
 module.exports = function(app, envConfig){
 
 	// API Routes
-	// only requests to /api/* will be sent to our "router"
+	// only requests to /api/* will be sent to our router
 	app.use('/api', router);
 
 	router.get('/crimeTotals', function(req, res){
@@ -29,7 +29,6 @@ module.exports = function(app, envConfig){
 		res.sendFile(envConfig.rootPath + 'server/data/beats/' + beat + '.geojson');
 	});
 
-	// ERROR: Heroku Dyno limits: { 1X: 512MB,  2X: 1024MB }
 	// ohhhh... also production database
 	// query string, send crimes for date range
 	router.get('/', function(req, res){

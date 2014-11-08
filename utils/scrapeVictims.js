@@ -1,5 +1,4 @@
 // Scrape all current year murder victims from a news site
-// Special note: scraperjs > phantomjs for this simple task
 
 var scraperjs = require('scraperjs');
 var fs = require('fs');

@@ -2,7 +2,7 @@ var _ = require('lodash'),
 	fs = require('fs'),
 	q = require('q'),
 	readCrimes = require('./readCrimes'),
-	outputPath = require('path').join(__dirname, '../public/data/crimeTotals.json');
+	outputPath = require('path').join(__dirname, '../server/data/crimeTotals.json');
 
 var beats = [];
 var crimeTypes = [];
