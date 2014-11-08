@@ -26,10 +26,11 @@ module.exports = function(app, envConfig){
 	// send crimes for police beat
 	router.get('/beat/:beat', function(req, res){
 		var beat = req.param('beat');
-		res.sendFile(envConfig.rootPath + 'server/data/beats/' + beat + '.geojson');
+		Crime.find({ beat: beat }, function(err, crimes){
+			res.json(crimes);
+		})
 	});
 
-	// ohhhh... also production database
 	// query string, send crimes for date range
 	router.get('/', function(req, res){
 

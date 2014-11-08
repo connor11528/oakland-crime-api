@@ -3,21 +3,12 @@
 var app = angular.module('oakCrimeApp', [
 	'ui.router',
   'ui.bootstrap',
-  'angular-loading-bar',
-  'ngTagsInput',
-  'daterangepicker',
-  'google-maps'.ns()
+  'angular-loading-bar'
 ]);
 
-app.config(["$stateProvider", "$urlRouterProvider", 'GoogleMapApiProvider'.ns(), 
-  function($stateProvider, $urlRouterProvider, GoogleMapApi){  
+app.config(["$stateProvider", "$urlRouterProvider", 
+  function($stateProvider, $urlRouterProvider){  
 
-    GoogleMapApi.configure({
-        key: 'AIzaSyBew-TghtDSGedK_43qRtmxb2Y95ikwg24',
-        v: '3.17',
-        libraries: 'weather,geometry,visualization'
-    });
-  
     // routing
     $stateProvider
       .state("main", {
@@ -25,15 +16,10 @@ app.config(["$stateProvider", "$urlRouterProvider", 'GoogleMapApiProvider'.ns(),
           controller: 'MainCtrl',
           templateUrl: 'views/main.html'
       })
-      .state("map", {
-          url: "/map",
-          controller: 'MapCtrl',
-          templateUrl: 'views/map.html'
-      })
-      .state("accordion", {
-          url: "/accordion",
-          controller: 'MainCtrl',
-          templateUrl: 'views/accordion.html'
+      .state('beat', {
+        url: '/beat/:beat',
+        templateUrl: 'views/beat_info.html',
+        controller: 'ViewBeatCtrl'
       })
       .state('about', {
         url: '/about',

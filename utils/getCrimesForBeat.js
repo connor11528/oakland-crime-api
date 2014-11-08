@@ -147,7 +147,6 @@ var beats = [
 ];
 
 // Error: EMFILE, open '../server/data/beats/1L28.csv'
-
 beats.forEach(function(beat){
 
 	var beatFile = fq.createWriteStream('../server/data/beats/' + beat + '.csv');
@@ -161,4 +160,17 @@ beats.forEach(function(beat){
 		console.log('Finished writing to ' + beat + ' file')
 	});
 });
+
+
+// kinda works...
+// var beatFile = fq.createWriteStream('../server/data/beats/12X.csv');
+
+// // read each line of the main csv file
+// readCrimes(function(crime){
+//   var crimestring = _.values(crime).join(', ');
+//   beatFile.write(crimestring);
+
+// }, function(){
+//   console.log('Finished writing to 12X file')
+// });
 
