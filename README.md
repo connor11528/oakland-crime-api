@@ -38,6 +38,7 @@ Once added, get the MONGODB_URI:
 
 ```
 $ heroku config | grep MONGODB_URI
+$ heroku config:set NODE_ENV=production
 ```
 
 Copy and paste that into `production.database` in **server/config/environments.js** file.
