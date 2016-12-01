@@ -12,7 +12,7 @@ module.exports = {
 	},
 	production: {
 		rootPath: rootPath,
-		database: 'mongodb://openoakland:openoakland@ds051170.mongolab.com:51170/heroku_app30730676',
+		database: 'mongodb://heroku_9jck8lzt:hoh7r0mg897hno5rlce70s5co8@ds115738.mlab.com:15738/heroku_9jck8lzt',
 		port: process.env.PORT || 80
 	}
 };

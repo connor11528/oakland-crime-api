@@ -30,8 +30,21 @@ Heroku is a service for deploying web apps to the internet. Salesforce owns it.
 ```
 $ heroku login
 $ heroku create myAppName
-$ git push heroku master
 ```
+
+You also need to set up [MongoLab](https://devcenter.heroku.com/articles/mongolab) because the application requires a database. To do this add the Mongolab add-on to your created app.
+
+Once added, get the MONGODB_URI:
+
+```
+$ heroku config | grep MONGODB_URI
+```
+
+Copy and paste that into `production.database` in **server/config/environments.js** file.
+
+To deploy, add and commit your changes with git and then run `$ git push heroku master`.
+
+
 
 ### Resources
 
